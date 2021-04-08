@@ -7,6 +7,7 @@ function App() {
   return (
     <MainContainer>
       <Header />
+      
       <Map />
     </MainContainer>
   );
