@@ -14,8 +14,8 @@ export default function Map() {
   return (
     <ReactMapGL
       {...viewport}
-      width={isMobile ? '80vw' : '40vw'}
-      height='60vh'
+      width='100vw'
+      height='100vh'
       onViewportChange={nextViewport => setViewport(nextViewport)}
       mapboxApiAccessToken={"pk.eyJ1Ijoib3JpYWJyZXUiLCJhIjoiY2tuN3lwbHZlMHNzNTJubng4dGxpZGw0ZSJ9.8qa_Q00dk7-BeuOoJ6yBjQ"}
       mapStyle={"mapbox://styles/oriabreu/ckn8ronv01qc417pfz06rceka"}
