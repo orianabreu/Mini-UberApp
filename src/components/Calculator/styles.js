@@ -1,11 +1,40 @@
 import styled from 'styled-components';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    textField: {
+        margin: '10px 10px 10px 0',
+        width: '35ch',
+        color: '#fff',
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: '#fff',
+            },
+            '&:hover fieldset': {
+              borderColor: '#9cfcd2',
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: '#49f8af',
+            },
+          },
+    },
+    multilineColor: {
+        color: '#fff',
+    },
+  }));
 
 export const Container = styled.div`
     width: 40vw;
     display: flex;
-    justify-content: center;
-    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
 `;
 
+export const Description1 = styled.p`
+    font-weight: 100;
+    font-size: 15px;
+    color: #fff;
+`;
 
-
+export default useStyles;
