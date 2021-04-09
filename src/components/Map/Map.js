@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
 import ReactMapGL from 'react-map-gl';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 export default function Map() {
   const [viewport, setViewport] = useState({
@@ -9,7 +8,6 @@ export default function Map() {
     longitude: -3.6882649339095197,
     zoom: 12
   });
-  const isMobile = useMediaQuery('(max-width:600px)');
   
   return (
     <ReactMapGL

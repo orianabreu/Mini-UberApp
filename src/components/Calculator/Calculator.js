@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 import Header from '../../sections/Header/Header';
 import useStyles, { Container, Description1 } from './styles';
 
@@ -14,7 +15,7 @@ export default function Calculator() {
         setValues({ ...values, [prop]: event.target.value });
       };
 
-      const { textField, multilineColor } = useStyles();
+      const { textField, multilineColor, clickedButton } = useStyles();
 
     return (
         <Container>
@@ -25,7 +26,6 @@ export default function Calculator() {
             </Description1>
 
             <form noValidate autoComplete='off'>
-
                 <TextField 
                     value={values.km}
                     onChange={handleChange('km')}
@@ -44,8 +44,11 @@ export default function Calculator() {
                         className: multilineColor
                     }}
                 />
-
             </form>
+
+            <Button variant='contained' size='large' className={clickedButton}>
+                Calculate
+            </Button>
 
             
         </Container>

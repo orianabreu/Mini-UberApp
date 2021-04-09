@@ -21,6 +21,13 @@ const useStyles = makeStyles((theme) => ({
     multilineColor: {
         color: '#fff',
     },
+    clickedButton: {
+        backgroundColor: '#49f8af',
+        borderColor: '#49f8af',
+        color: '#070808',
+        fontWeight: 'bold',
+        margin: '10px 10px 10px 0',
+    }
   }));
 
 export const Container = styled.div`
