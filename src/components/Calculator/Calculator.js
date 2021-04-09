@@ -46,7 +46,11 @@ export default function Calculator() {
                 />
             </form>
 
-            <Button variant='contained' size='large' className={clickedButton}>
+            <Button 
+                variant='contained' 
+                size='large' 
+                className={clickedButton}
+            >
                 Calculate
             </Button>
 
