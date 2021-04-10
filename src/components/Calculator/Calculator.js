@@ -14,8 +14,13 @@ export default function Calculator() {
 
     const [open, setOpen] = useState(false);
     
-    const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setValues((prevValue) => ({
+        ...prevValue,
+        [name]: value
+        }));
       };
 
     const showDialogResult = () => {
@@ -36,7 +41,8 @@ export default function Calculator() {
             <form noValidate autoComplete='off'>
                 <TextField 
                     value={values.km}
-                    onChange={handleChange('km')}
+                    name='km'
+                    onChange={handleChange}
                     variant='outlined'
                     className={textField}
                     InputProps={{
@@ -45,7 +51,8 @@ export default function Calculator() {
                 />
                 <TextField 
                     value={values.price}
-                    onChange={handleChange('price')}
+                    name='price'
+                    onChange={handleChange}
                     variant='outlined'
                     className={textField}
                     InputProps={{

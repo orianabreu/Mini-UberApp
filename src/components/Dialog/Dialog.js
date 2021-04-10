@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MyButton from '../Button/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -11,10 +11,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function AlertDialogSlide({open, setOpen}) {
-
-  //const handleClickOpen = () => {
-    //setOpen(true);
-  //};
 
   const handleClose = () => {
     setOpen(false);
