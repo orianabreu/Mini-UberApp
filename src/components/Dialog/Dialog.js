@@ -37,14 +37,9 @@ export default function AlertDialogSlide({open, setOpen}) {
                 className: openedDialog,
               }}
         >
-        <DialogTitle id="alert-dialog-slide-title">{"Use Google's location service?"}</DialogTitle>
-
-        <DialogContent>
-            <DialogContentText id="alert-dialog-slide-description">
-                Let Google help apps determine location. This means sending anonymous location data to
-                Google, even when no apps are running.
-            </DialogContentText>
-        </DialogContent>
+        <DialogTitle id="alert-dialog-slide-title">
+              Your route will cost
+        </DialogTitle>
 
         <DialogActions>
             <Button onClick={handleClose} color="primary">
