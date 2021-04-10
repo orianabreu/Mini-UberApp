@@ -1,13 +1,12 @@
 import './App.css';
 import MainContainer from './styles';
-import Header from './sections/Header/Header';
 import Map from './components/Map/Map';
+import Calculator from './components/Calculator/Calculator';
 
 function App() {
   return (
     <MainContainer>
-      <Header />
-      
+      <Calculator />
       <Map />
     </MainContainer>
   );

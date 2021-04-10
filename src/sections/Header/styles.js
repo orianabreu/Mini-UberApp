@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 
 export const Title = styled.h1`
-    font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    font-size: 50px;
-    weight: 100vw;
+    font-size: 28px;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    text-align: left;
 `;
