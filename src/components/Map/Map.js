@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import ReactMapGL from 'react-map-gl';
+import ReactMapGL, {GeolocateControl} from 'react-map-gl';
 
 export default function Map() {
   const [viewport, setViewport] = useState({
@@ -8,6 +8,11 @@ export default function Map() {
     longitude: -3.6882649339095197,
     zoom: 12
   });
+
+  const geolocateControlStyle= {
+    right: 10,
+    top: 10
+  };
   
   return (
     <ReactMapGL
@@ -17,6 +22,13 @@ export default function Map() {
       onViewportChange={nextViewport => setViewport(nextViewport)}
       mapboxApiAccessToken={"pk.eyJ1Ijoib3JpYWJyZXUiLCJhIjoiY2tuN3lwbHZlMHNzNTJubng4dGxpZGw0ZSJ9.8qa_Q00dk7-BeuOoJ6yBjQ"}
       mapStyle={"mapbox://styles/oriabreu/ckn8ronv01qc417pfz06rceka"}
-    />
+    >
+      <GeolocateControl
+        style={geolocateControlStyle}
+        positionOptions={{enableHighAccuracy: true}}
+        trackUserLocation={true}
+        auto
+      />
+    </ReactMapGL>
   );
 }
