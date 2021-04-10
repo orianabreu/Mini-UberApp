@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Header from '../../sections/Header/Header';
 import useStyles, { Container, Description1 } from './styles';
+import Dialog from '../Dialog/Dialog';
 
 export default function Calculator() {
 
@@ -10,14 +11,21 @@ export default function Calculator() {
         km: '',
         price: '',
       });
+
+    const [open, setOpen] = useState(false);
     
-      const handleChange = (prop) => (event) => {
+    const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
       };
 
-      const { textField, multilineColor, clickedButton } = useStyles();
+    const showDialogResult = () => {
+        setOpen(true);
+    }
+
+    const { textField, multilineColor, clickedButton } = useStyles();
 
     return (
+        <>
         <Container>
             <Header />
 
@@ -50,11 +58,15 @@ export default function Calculator() {
                 variant='contained' 
                 size='large' 
                 className={clickedButton}
+                onClick={showDialogResult}
             >
                 Calculate
             </Button>
-
-            
         </Container>
+        <Dialog 
+            open={open} 
+            setOpen={setOpen}
+        />
+        </>
     );
 }
