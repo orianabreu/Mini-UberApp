@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import MyButton from '../Button/Button';
 import Header from '../../sections/Header/Header';
 import useStyles, { Container, Description1 } from './styles';
 import Dialog from '../Dialog/Dialog';
@@ -54,14 +54,12 @@ export default function Calculator() {
                 />
             </form>
 
-            <Button 
-                variant='contained' 
-                size='large' 
+            <MyButton 
                 className={clickedButton}
                 onClick={showDialogResult}
             >
                 Calculate
-            </Button>
+            </MyButton>
         </Container>
         <Dialog 
             open={open} 
