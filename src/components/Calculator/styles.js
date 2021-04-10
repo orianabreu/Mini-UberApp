@@ -27,7 +27,11 @@ const useStyles = makeStyles((theme) => ({
         color: '#070808',
         fontWeight: 'bold',
         margin: '10px 10px 10px 0',
-    }
+    },
+    openedDialog: {
+      backgroundColor: '#070808',
+      color: '#fff',
+  },
   }));
 
 export const Container = styled.div`

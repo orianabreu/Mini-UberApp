@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import MyButton from '../Button/Button';
 import Header from '../../sections/Header/Header';
 import useStyles, { Container, Description1 } from './styles';
-import Dialog from '../Dialog/Dialog';
 
 export default function Calculator() {
 
@@ -13,6 +15,8 @@ export default function Calculator() {
       });
 
     const [open, setOpen] = useState(false);
+
+    const { km, price } = values;
     
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -27,10 +31,17 @@ export default function Calculator() {
         setOpen(true);
     }
 
-    const { textField, multilineColor, clickedButton } = useStyles();
+    const handleClose = () => {
+        setOpen(false);
+        setValues({
+            km:'',
+            price:''
+        });
+      };
+
+    const { textField, multilineColor, clickedButton, openedDialog } = useStyles();
 
     return (
-        <>
         <Container>
             <Header />
 
@@ -40,7 +51,7 @@ export default function Calculator() {
 
             <form noValidate autoComplete='off'>
                 <TextField 
-                    value={values.km}
+                    value={km}
                     name='km'
                     onChange={handleChange}
                     variant='outlined'
@@ -50,7 +61,7 @@ export default function Calculator() {
                     }}
                 />
                 <TextField 
-                    value={values.price}
+                    value={price}
                     name='price'
                     onChange={handleChange}
                     variant='outlined'
@@ -67,11 +78,28 @@ export default function Calculator() {
             >
                 Calculate
             </MyButton>
+
+            <Dialog
+                open={open}
+                setOpen={setOpen}
+                keepMounted
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-slide-title"
+                aria-describedby="alert-dialog-slide-description"
+                PaperProps={{
+                    className: openedDialog,
+                }}
+            >
+                <DialogTitle id="alert-dialog-slide-title">
+                    Your route will cost <b>{km*price}€</b>
+                </DialogTitle>
+
+                <DialogActions>
+                    <MyButton onClick={handleClose} size='small'>
+                        Close
+                    </MyButton>
+                </DialogActions>
+            </Dialog>
         </Container>
-        <Dialog 
-            open={open} 
-            setOpen={setOpen}
-        />
-        </>
     );
 }
