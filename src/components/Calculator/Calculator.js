@@ -59,8 +59,11 @@ export default function Calculator() {
                     onChange={handleChange}
                     variant='outlined'
                     className={textField}
+                    type="number"
+                    placeholder='Introduce distance (Km)'
                     InputProps={{
                         className: multilineColor,
+                        shrink: true,
                         endAdornment: (
                             <InputAdornment position='end'>
                                 <DirectionsCarIcon />
@@ -74,8 +77,11 @@ export default function Calculator() {
                     onChange={handleChange}
                     variant='outlined'
                     className={textField}
+                    placeholder="Introduce fee (€/Km)"
+                    type="number"
                     InputProps={{
                         className: multilineColor,
+                        shrink: true,
                         endAdornment: (
                             <InputAdornment position='end'>
                                 <EuroIcon />
