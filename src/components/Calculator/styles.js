@@ -44,7 +44,7 @@ export const Container = styled.div`
 
 export const Description1 = styled.p`
     font-weight: 100;
-    font-size: 15px;
+    font-size: 17px;
     color: #fff;
 `;
 

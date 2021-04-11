@@ -49,7 +49,7 @@ export default function Calculator() {
             <Header />
 
             <Description1>
-                Introduce distance and fee manually to calculate the cost of your route
+                Introduce distance and fee below to calculate the cost of your route. You can also calculate the distance automatically in the box rightwards
             </Description1>
 
             <form noValidate autoComplete='off'>
