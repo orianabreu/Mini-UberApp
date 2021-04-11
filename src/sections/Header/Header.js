@@ -1,10 +1,10 @@
 import React from 'react';
-import * as S from './styles';
+import Title from './styles';
 
 export default function Header() {
     return (
-        <S.Title>
+        <Title>
             Route Cost Calculator
-        </S.Title>
+        </Title>
     );
 }

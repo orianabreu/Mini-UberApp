@@ -6,16 +6,16 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import DirectionsCarIcon from '@material-ui/icons/DirectionsCar';
 import EuroIcon from '@material-ui/icons/Euro';
-import MyButton from '../Button/Button';
+import MyButton from '../MyButton/MyButton';
 import Header from '../../sections/Header/Header';
-import useStyles, { Container, Description1 } from './styles';
+import useStyles, { Container, Description } from './styles';
 
 export default function Calculator() {
 
     const [values, setValues] = useState({
         km: '',
         price: '',
-      });
+    });
 
     const [open, setOpen] = useState(false);
 
@@ -28,7 +28,7 @@ export default function Calculator() {
         ...prevValue,
         [name]: value
         }));
-      };
+    };
 
     const showDialogResult = () => {
         setOpen(true);
@@ -40,7 +40,7 @@ export default function Calculator() {
             km:'',
             price:''
         });
-      };
+    };
 
     const { textField, multilineColor, clickedButton, openedDialog } = useStyles();
 
@@ -48,9 +48,9 @@ export default function Calculator() {
         <Container>
             <Header />
 
-            <Description1>
+            <Description>
                 Introduce distance and fee below to calculate the cost of your route. You can also calculate the distance automatically in the box rightwards
-            </Description1>
+            </Description>
 
             <form noValidate autoComplete='off'>
                 <TextField 
@@ -63,7 +63,6 @@ export default function Calculator() {
                     placeholder='Introduce distance (Km)'
                     InputProps={{
                         className: multilineColor,
-                        shrink: true,
                         endAdornment: (
                             <InputAdornment position='end'>
                                 <DirectionsCarIcon />
@@ -81,7 +80,6 @@ export default function Calculator() {
                     type="number"
                     InputProps={{
                         className: multilineColor,
-                        shrink: true,
                         endAdornment: (
                             <InputAdornment position='end'>
                                 <EuroIcon />
@@ -100,16 +98,13 @@ export default function Calculator() {
 
             <Dialog
                 open={open}
-                setOpen={setOpen}
                 keepMounted
                 onClose={handleClose}
-                aria-labelledby="alert-dialog-slide-title"
-                aria-describedby="alert-dialog-slide-description"
                 PaperProps={{
                     className: openedDialog,
                 }}
             >
-                <DialogTitle id="alert-dialog-slide-title">
+                <DialogTitle>
                     Your route will cost <b>{km*price}€</b>
                 </DialogTitle>
 

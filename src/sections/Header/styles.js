@@ -7,3 +7,5 @@ export const Title = styled.h1`
     text-transform: uppercase;
     text-align: left;
 `;
+
+export default Title;

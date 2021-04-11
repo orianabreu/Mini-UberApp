@@ -42,7 +42,7 @@ export const Container = styled.div`
     padding: 30px;
 `;
 
-export const Description1 = styled.p`
+export const Description = styled.p`
     font-weight: 100;
     font-size: 17px;
     color: #fff;
