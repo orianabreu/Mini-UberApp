@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './map.css';
+import MapWrapper from './styles.js';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
@@ -29,7 +29,7 @@ export default function Map() {
     });
 
     return (
-      <div ref={mapContainer} className="mapWrapper" />
+      <MapWrapper ref={mapContainer}/>
     );
 }
 
