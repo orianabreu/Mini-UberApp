@@ -3,6 +3,9 @@ import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import DirectionsCarIcon from '@material-ui/icons/DirectionsCar';
+import EuroIcon from '@material-ui/icons/Euro';
 import MyButton from '../Button/Button';
 import Header from '../../sections/Header/Header';
 import useStyles, { Container, Description1 } from './styles';
@@ -57,7 +60,12 @@ export default function Calculator() {
                     variant='outlined'
                     className={textField}
                     InputProps={{
-                        className: multilineColor
+                        className: multilineColor,
+                        endAdornment: (
+                            <InputAdornment position='end'>
+                                <DirectionsCarIcon />
+                            </InputAdornment>
+                        ),
                     }}
                 />
                 <TextField 
@@ -67,7 +75,12 @@ export default function Calculator() {
                     variant='outlined'
                     className={textField}
                     InputProps={{
-                        className: multilineColor
+                        className: multilineColor,
+                        endAdornment: (
+                            <InputAdornment position='end'>
+                                <EuroIcon />
+                            </InputAdornment>
+                        ),
                     }}
                 />
             </form>
